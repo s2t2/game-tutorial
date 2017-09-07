@@ -65,9 +65,11 @@ Make a file called `spawn.csv` and let's populate it:
 
 Now we'll make a new generator:
 
+    import csv
+
     def file_spawner(file_name):
         with open(path.join(path.dirname(__file__), file_name), "r") as spawn_file:
-            spawn_reader = csv.reader(csvfile)
+            spawn_reader = csv.reader(spawn_file)
             for row in spawn_reader:
                 yield float(row[0]), int(row[1])
 
