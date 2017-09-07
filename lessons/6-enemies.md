@@ -48,6 +48,7 @@ Let's make some collisions!
             enemies = self.groups["enemy"]
             groupcollide(player, enemies, True, True)
             groupcollide(enemies, bullets, True, True)
+            self.spawner.spawn(time_delta)
 
 `groupcollide` takes two sprite groups and checks every sprite inside
 against each other. The two booleans are telling group collide to kill
